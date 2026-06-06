@@ -1,0 +1,6 @@
+# 生データ（巨大・再取得可能なため git 管理外）
+data/raw/
+*.geojson.tmp
+__pycache__/
+*.pyc
+.DS_Store
