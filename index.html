@@ -12,59 +12,63 @@
   <div id="app">
     <aside id="sidebar">
       <header>
-        <h1>防災・災害対応<br>ドローン即応リソースマップ</h1>
-        <p class="lead">夜間・目視外に対応した「災害対応」ドローン運用が、どの地域にどれだけ分布しているかの<strong>推定</strong>。</p>
+        <div id="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="ja" class="active">日本語</button>
+          <button type="button" data-lang="en">English</button>
+        </div>
+        <h1 data-i18n="title"></h1>
+        <p class="lead" data-i18n-html="lead"></p>
       </header>
 
       <section class="panel">
-        <h2>表示する指標</h2>
+        <h2 data-i18n="h_metric"></h2>
         <div id="metric-group" class="radio-group">
-          <label><input type="radio" name="metric" value="score" checked> 即応度スコア</label>
-          <label><input type="radio" name="metric" value="full"> 完全対応（夜間×目視外）</label>
-          <label><input type="radio" name="metric" value="night"> 夜間対応</label>
-          <label><input type="radio" name="metric" value="bvlos"> 目視外対応</label>
-          <label><input type="radio" name="metric" value="disaster"> 災害対応 計画数</label>
+          <label><input type="radio" name="metric" value="score" checked> <span data-i18n="m_score"></span></label>
+          <label><input type="radio" name="metric" value="full"> <span data-i18n="m_full"></span></label>
+          <label><input type="radio" name="metric" value="night"> <span data-i18n="m_night"></span></label>
+          <label><input type="radio" name="metric" value="bvlos"> <span data-i18n="m_bvlos"></span></label>
+          <label><input type="radio" name="metric" value="disaster"> <span data-i18n="m_disaster"></span></label>
         </div>
         <p class="hint" id="metric-hint"></p>
       </section>
 
       <section class="panel">
-        <h2>能力フィルタ</h2>
+        <h2 data-i18n="h_filter"></h2>
         <div class="check-group">
-          <label><input type="checkbox" id="f-night"> 夜間対応あり</label>
-          <label><input type="checkbox" id="f-bvlos"> 目視外対応あり</label>
-          <label><input type="checkbox" id="f-full"> 完全対応あり（夜間×目視外）</label>
+          <label><input type="checkbox" id="f-night"> <span data-i18n="f_night"></span></label>
+          <label><input type="checkbox" id="f-bvlos"> <span data-i18n="f_bvlos"></span></label>
+          <label><input type="checkbox" id="f-full"> <span data-i18n="f_full"></span></label>
         </div>
         <div class="select-row">
-          <label for="pref-select">都道府県</label>
-          <select id="pref-select"><option value="">すべて</option></select>
+          <label for="pref-select" data-i18n="l_pref"></label>
+          <select id="pref-select"></select>
         </div>
         <div class="select-row">
-          <label for="kind-select">機体の種類</label>
-          <select id="kind-select"><option value="">すべて</option></select>
+          <label for="kind-select" data-i18n="l_kind"></label>
+          <select id="kind-select"></select>
         </div>
         <div class="check-group">
-          <label><input type="checkbox" id="f-tokachi"> 北海道・十勝管内のみ</label>
+          <label><input type="checkbox" id="f-tokachi"> <span data-i18n="f_tokachi"></span></label>
         </div>
-        <button id="reset-btn" type="button">フィルタをリセット</button>
+        <button id="reset-btn" type="button" data-i18n="reset"></button>
       </section>
 
       <section class="panel" id="stats-panel">
-        <h2>集計サマリ</h2>
+        <h2 data-i18n="h_stats"></h2>
         <div id="stats"></div>
       </section>
 
       <section class="panel" id="rank-panel">
-        <h2>即応度ランキング <span id="rank-count" class="muted"></span></h2>
+        <h2><span data-i18n="h_rank"></span> <span id="rank-count" class="muted"></span></h2>
         <ol id="ranking"></ol>
       </section>
 
       <footer>
         <section class="panel notice">
-          <h2>ご利用にあたって</h2>
+          <h2 data-i18n="h_notice"></h2>
           <p id="disclaimer"></p>
           <p class="src" id="attribution"></p>
-          <p class="src">本マップは飛行計画（申請）ベースの推定であり、実際の出動可能性・実飛行・各事業者の実態を保証するものではありません。災害協定等の検討にあたっては一次情報での確認をお願いします。</p>
+          <p class="src" data-i18n="static_disclaimer"></p>
         </section>
       </footer>
     </aside>
@@ -72,7 +76,7 @@
     <main id="map-wrap">
       <div id="map"></div>
       <div id="legend" class="leaflet-control"></div>
-      <div id="loading">データを読み込み中…</div>
+      <div id="loading" data-i18n="loading"></div>
     </main>
   </div>
 
