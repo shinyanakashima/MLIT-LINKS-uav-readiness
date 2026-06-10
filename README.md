@@ -82,6 +82,10 @@
 
 素の HTML / CSS / JavaScript と [Leaflet](https://leafletjs.com/) のみで動く静的サイトです。ビルド工程はありません。地図の下地は OpenStreetMap タイルを使い、API キーは不要です。公開済みデータ `data/processed/readiness.json`（約600KB）だけを配信し、生データ（合計約8.7GB）は配信しません。
 
+### 原典データ
+- ファイルは仕様の「数十MB級」より大幅に大きい（最大約1GB、合計約8.7GB）
+- ディスク約24GB・メモリ15GBで、ストリーミング前提（ijson は要 pip install）
+
 ### ディレクトリ構成
 
 ```
